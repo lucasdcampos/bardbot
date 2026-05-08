@@ -8,6 +8,7 @@ ENV/
 
 # Project specific
 .env
+cookies.txt
 music/*
 !music/.gitkeep
 
