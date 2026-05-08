@@ -16,6 +16,11 @@ YTDL_OPTIONS = {
     'default_search': 'auto',
     'source_address': '0.0.0.0',
     'cookiefile': 'cookies.txt' if os.path.exists('cookies.txt') else None,
+    'postprocessors': [{
+        'key': 'FFmpegExtractAudio',
+        'preferredcodec': 'mp3',
+        'preferredquality': '192',
+    }],
 }
 
 ffmpeg_options = {
@@ -51,6 +56,4 @@ class Downloader:
             
         # Extension is now mp3 due to postprocessors
         file_path = f"music/{data['id']}.mp3"
-        return file_path, data['title']
-       file_path = f"music/{data['id']}.{data['ext']}"
         return file_path, data['title']
