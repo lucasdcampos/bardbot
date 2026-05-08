@@ -49,5 +49,8 @@ class Downloader:
         if 'entries' in data:
             data = data['entries'][0]
             
-        file_path = f"music/{data['id']}.{data['ext']}"
+        # Extension is now mp3 due to postprocessors
+        file_path = f"music/{data['id']}.mp3"
+        return file_path, data['title']
+       file_path = f"music/{data['id']}.{data['ext']}"
         return file_path, data['title']
